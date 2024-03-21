@@ -31,4 +31,7 @@
   #link_button-16-7 {
     padding: 0 5px;
   }
+  .ct-slider .ct-slide {
+    padding: 0px !important;
+}
 }
