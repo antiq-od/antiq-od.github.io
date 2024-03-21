@@ -16,6 +16,10 @@
   margin-bottom: 32px;
 }
 
+#link_button-16-7 {
+  padding: 0 5px;
+}
+
 @media (max-width: 767px) {
   #headline-11-7 {
     display: none;
@@ -27,9 +31,6 @@
   }
   #text_block-13-7 {
     font-size: 14px;
-  }
-  #link_button-16-7 {
-    padding: 0 5px;
   }
   .ct-slider .ct-slide {
     padding: 0px !important;
