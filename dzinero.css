@@ -1,1 +1,4 @@
-
+.search-input-container .search-input {
+  opacity: 0;
+  pointer-event: none;
+}
