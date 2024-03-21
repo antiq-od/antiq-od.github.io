@@ -6,6 +6,9 @@
 #headline-11-7 {
     font-size: 76px;
 }
+#headline-11-7.mobile {
+  display: none;
+}
 
 #text_block-13-7 {
     font-size: 20px;
@@ -13,8 +16,12 @@
 }
 @media (max-width: 767px) {
   #headline-11-7 {
-      font-size: 26px;
-      margin-bottom: 10px;
+    display: none;
+  }
+  #headline-11-7.mobile {
+    font-size: 26px;
+    margin-bottom: 10px;
+    display: block;
   }
   #text_block-13-7 {
     font-size: 14px;
