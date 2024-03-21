@@ -4,16 +4,18 @@
 }
 
 #headline-11-7 {
-    font-size: 76px;
+  font-size: 76px;
 }
+
 #headline-11-7.mobile {
   display: none;
 }
 
 #text_block-13-7 {
-    font-size: 20px;
-    margin-bottom: 32px;
+  font-size: 20px;
+  margin-bottom: 32px;
 }
+
 @media (max-width: 767px) {
   #headline-11-7 {
     display: none;
