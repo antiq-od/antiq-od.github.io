@@ -24,6 +24,14 @@
   padding: 0 5px;
 }
 
+.ct-link.product-container {
+  width: 33.3%;
+}
+
+#div_block-133-18 {
+    visibility: hidden;
+}
+
 @media (max-width: 767px) {
   #headline-11-7 {
     display: none;
@@ -38,5 +46,8 @@
   }
   .ct-slider .ct-slide {
     padding: 0px !important;
-}
+  }
+  .ct-link.product-container {
+    width: 100%;
+  }
 }
