@@ -33,8 +33,13 @@
 }
 
 .home-title {
-  font-size:46px;
+  font-size: 46px;
 }
+
+#div_block-23-7 {
+  width: 65%;
+}
+
 @media (max-width: 767px) {
   #headline-11-7 {
     display: none;
