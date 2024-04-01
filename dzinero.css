@@ -4,7 +4,7 @@
 }
 
 #text_block-31-7 {
-    font-size: 14px;
+    font-size: 12px;
 }
 
 #headline-11-7 {
@@ -32,6 +32,9 @@
     visibility: hidden;
 }
 
+.home-title {
+  font-size:46px;
+}
 @media (max-width: 767px) {
   #headline-11-7 {
     display: none;
