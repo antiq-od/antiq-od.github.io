@@ -40,6 +40,10 @@
   width: 65%;
 }
 
+#div_block-12-18 {
+  flex-direction: row;
+  gap: 20px;
+}
 @media (max-width: 767px) {
   #headline-11-7 {
     display: none;
