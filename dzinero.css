@@ -44,6 +44,10 @@
   flex-direction: row;
   gap: 20px;
 }
+
+body .ct-slider .ct-slide {
+  padding: 0 !important;
+}
 @media (max-width: 767px) {
   #headline-11-7 {
     display: none;
