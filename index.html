@@ -1218,33 +1218,33 @@
           </div>
           <script class="ct-slider-script">
             jQuery(document).ready(function ($) {
-              $('#link_button-16-7').click(function(event) {
+              $('#link_button-16-7, #link_button-17-7').click(function (event) {
                 event.preventDefault();
 
-                var section = $('#section-189-18');
+                var targetSectionId;
 
-                if(section.length > 0) {
-                  var targetOffset = section.offset().top;
-                  var scrollDuration = 1000; // Adjust the duration of the scroll animation (in milliseconds)
-                  var scrollStep = -window.scrollY / (scrollDuration / 15);
-                  var scrollInterval = setInterval(function(){
-                    if(window.scrollY != targetOffset) {
-                      window.scrollBy(0, scrollStep);
-                    } else {
-                      clearInterval(scrollInterval);
-                    }
-                  },15);
+                if ($(this).attr('id') === 'link_button-16-7') {
+                  targetSectionId = 'section-189-18';
+                } else if ($(this).attr('id') === 'link_button-17-7') {
+                  targetSectionId = 'section-91-7';
                 }
 
-            $('#slider-269-7.ct_unique_slider_3569 .oxygen-unslider-container:not(.unslider-horizontal,.unslider-fade)').unslider({
-            	autoplay: false,
-            	delay: 3000,
-            	animation: 'fade',
-            	speed: 1000,
-            	arrows: false,
-            	nav: false,
-            	infinite: false
-            })
+                var section = document.getElementById(targetSectionId);
+
+                if (section) {
+                  section.scrollIntoView({behavior: 'smooth'});
+                }
+              });
+
+              $('#slider-269-7.ct_unique_slider_3569 .oxygen-unslider-container:not(.unslider-horizontal,.unslider-fade)').unslider({
+                autoplay: false,
+                delay: 3000,
+                animation: 'fade',
+                speed: 1000,
+                arrows: false,
+                nav: false,
+                infinite: false
+              })
             });
           </script>
           <div class="ct-div-block" id="div_block-4-7"></div>
@@ -1265,7 +1265,7 @@
                   ВИРОБНИЦТВО ТА ДОСТАВКА ЯКІСНОГО ФАСАДНОГО ДЕКОРУ
                   <a href="https://foambydesign.com/our-products/precast-concrete" style="color: rgb(210, 197, 153); text-decoration: underline;">ПО ВСІЙ УКРАЇНІ.</a><br/><br/>
                 </div>
-                <a class="ct-link-button btn-m btn-white" href="/about" id="link_button-49-7" target="_self">Наші послуги</a>
+                <a class="ct-link-button btn-m btn-white" href="/about" id="link_button-49-7" target="_self">Наш бренд</a>
               </div>
             </div>
             <div class="ct-div-block" id="div_block-44-7"><img alt="Column" class="ct-image"
@@ -1332,7 +1332,7 @@
               </a>
             </div>
           </div>
-          <a class="ct-link-button btn-m btn-primary" href="/our-work/gallery" id="link_button-265-7" target="_self">ПОРТФОЛІО</a>
+          <a class="ct-link-button btn-m btn-primary" href="/our_work_gallery" id="link_button-265-7" target="_self">ПОРТФОЛІО</a>
         </div>
         <img alt="Black picture frame with ornament around perimeter on dark background" class="ct-image"
           id="image-108-7"
