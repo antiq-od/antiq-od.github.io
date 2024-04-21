@@ -2,7 +2,9 @@
   opacity: 0;
   pointer-events: none;
 }
-
+#section-681-18 input::placeholder {
+  text-transform: uppercase;
+}
 #text_block-31-7 {
     font-size: 12px;
 }
