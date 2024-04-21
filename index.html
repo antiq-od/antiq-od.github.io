@@ -1218,6 +1218,26 @@
           </div>
           <script class="ct-slider-script">
             jQuery(document).ready(function ($) {
+              var button = document.getElementById('link_button-16-7');
+              var section = document.getElementById('section-189-18');
+
+              if(button && section) {
+                button.addEventListener('click', function(event) {
+                  event.preventDefault();
+
+                  var targetOffset = section.offsetTop;
+                  var scrollDuration = 1000; // Adjust the duration of the scroll animation (in milliseconds)
+                  var scrollStep = -window.scrollY / (scrollDuration / 15);
+                  var scrollInterval = setInterval(function(){
+                    if(window.scrollY != targetOffset) {
+                      window.scrollBy(0, scrollStep);
+                    } else {
+                      clearInterval(scrollInterval);
+                    }
+                  },15);
+                });
+              }
+
             $('#slider-269-7.ct_unique_slider_3569 .oxygen-unslider-container:not(.unslider-horizontal,.unslider-fade)').unslider({
             	autoplay: false,
             	delay: 3000,
