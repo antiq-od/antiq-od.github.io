@@ -50,6 +50,13 @@
 body .ct-slider .ct-slide {
   padding: 0 !important;
 }
+
+@media only screen and (min-width: 992px) {
+  .products-gallery {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+}
+
 @media (max-width: 767px) {
   #headline-11-7 {
     display: none;
