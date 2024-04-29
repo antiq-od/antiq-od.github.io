@@ -1176,7 +1176,7 @@
             <h2 class="ct-headline mobile" id="headline-11-7">ВИСОКОЯКІСНИЙ</br> ФАСАДНИЙ ДЕКОР</h2>
             <div class="ct-text-block" id="text_block-13-7" style="color: rgb(210, 197, 153);" >ПЕРЕТВОРЕННЯ НЕРУХОМОСТІ З ЕЛІТНИМ ДЕКОРОМ, ТОЧНОЮ ДОСТАВКОЮ ТА АБСОЛЮТНОЮ ПРОЗОРІСТЮ. ЛЕГКІСТЬ У КОЖНОМУ КРОЦІ.</div>
             <div class="ct-div-block" id="div_block-15-7"><a class="ct-link-button btn-m btn-primary"
-              href="/#"
+              href="/about"
               id="link_button-16-7" target="_self">безкоштовна консультація</a><a class="ct-link-button btn-m btn-secondary" href="/wp-content/uploads/2023/06/Foam-By-Design-Product-Catalog-2023-web-version.pdf"
               id="link_button-17-7"
               target="_blank">наші послуги</a></div>
@@ -1195,16 +1195,12 @@
           </div>
           <script class="ct-slider-script">
               jQuery(document).ready(function ($) {
-              $('#link_button-16-7, #link_button-17-7').click(function (event) {
+              $('#link_button-16-7').click(function (event) {
                 event.preventDefault();
 
                 var targetSectionId;
 
-                if ($(this).attr('id') === 'link_button-16-7') {
-                  targetSectionId = 'section-189-18';
-                } else if ($(this).attr('id') === 'link_button-17-7') {
-                  targetSectionId = 'section-91-7';
-                }
+                targetSectionId = 'section-189-18';
 
                 var section = document.getElementById(targetSectionId);
 
