@@ -64,6 +64,9 @@ body .ct-slider .ct-slide {
 }
 
 @media (max-width: 767px) {
+  .home-title {
+    font-size: 37px;
+  }
   #headline-11-7 {
     display: none;
   }
