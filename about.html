@@ -302,6 +302,9 @@
         <div id="div_block-23-100" class="ct-div-block" ></div>
         <h1 id="headline-3-100" class="ct-headline hero-title">
             <style>
+                    #span-4-100 {
+                        font-size: 44px;
+                    }
                 @media (max-width: 768px) {
                     #span-4-100 {
                         font-size: 19px;
@@ -413,14 +416,14 @@
 </div>
 <div id="code_block-162-18" class="ct-code-block" ></div>
 <div id="code_block-161-18" class="ct-code-block" ></div>
-<section id="section-155-18" class=" ct-section cookie-notice-modal-open cookie-notice-modal-validator" >
-    <div class="ct-section-inner-wrap">
-        <div id="div_block-156-18" class="ct-div-block" >
-            <div id="text_block-157-18" class="ct-text-block" >We use cookies to enhance your browsing experience. By continuing to use our site, you consent to our use of cookies. Learn more in our <a id="span-172-18" class="ct-link-text" href="/privacy-policy" target="_self"  >Політика конфіденційності</a>.</div>
-            <div id="div_block-158-18" class="ct-div-block" ><a id="link_button-160-18" class="ct-link-button cookie-notice-close ct-link-button-cookie-notice btn-s btn-primary" href="#" target="_self"  >Прийняти та закрити</a></div>
-        </div>
-    </div>
-</section>
+<!--<section id="section-155-18" class=" ct-section cookie-notice-modal-open cookie-notice-modal-validator" >-->
+<!--    <div class="ct-section-inner-wrap">-->
+<!--        <div id="div_block-156-18" class="ct-div-block" >-->
+<!--            <div id="text_block-157-18" class="ct-text-block" >We use cookies to enhance your browsing experience. By continuing to use our site, you consent to our use of cookies. Learn more in our <a id="span-172-18" class="ct-link-text" href="/privacy-policy" target="_self"  >Політика конфіденційності</a>.</div>-->
+<!--            <div id="div_block-158-18" class="ct-div-block" ><a id="link_button-160-18" class="ct-link-button cookie-notice-close ct-link-button-cookie-notice btn-s btn-primary" href="#" target="_self"  >Прийняти та закрити</a></div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 <section class=" ct-section" id="section-449-18">
     <div class="ct-section-inner-wrap">
         <div class="ct-div-block" id="div_block-657-18">
@@ -1367,68 +1370,68 @@
     width: 100%;
 }
 </style>
-<script type="text/javascript" id="ct_code_block_js_100162">/*Set size container of the cookie notice and prevent modal overlay*/
-(function(){
-	var stopAfter = 0;
-	var userwayInterval = setInterval(checkIfUserWayLoaded, 1000);
-	var cookie_notice_wrapper = document.querySelector(".cookie-notice-modal-validator");
-	if (document.cookie.indexOf('STYXKEY-cookie-notice-cookie=') != -1 && cookie_notice_wrapper){
-		console.log(cookie_notice_wrapper);
-		cookie_notice_wrapper.innerHTML = "";
-	}
-	function closeCookieFunction(e){
-		e.preventDefault();
-		cookieModal[0].classList.remove("cookie-notice-modal-open");
-		cookieModal[0].classList.add("cookie-notice-bar-animation");
-		callcookie("STYXKEY-cookie-notice-cookie", true, 1);
-		var userway = document.querySelector('#userwayAccessibilityIcon');
-		if (userway){
-			userway.style.bottom = '0px';
-			stopUserwayChecker();
-		}
-	}
-	/*cookie 24 hours*/
-	function callcookie(name,value,days){
-		if(days){
-			var d=new Date();
-			d.setTime(d.getTime()+(days*24*60*60*1000));
-			var expires = "; expires="+d.toGMTString();
-		} else {
-			var expires = "";
-		}
-		document.cookie = name+"="+value+expires+"; path=/";
-	}
-	function checkIfUserWayLoaded(){
-		var cookieModalOpen = document.querySelector('.cookie-notice-modal-open');
-		/*if modal open, add bottom to userway*/
-		if (cookieModalOpen && parseInt(cookieModalOpen.offsetHeight) > 0){
-			var userway = document.querySelector('#userwayAccessibilityIcon');
-			if (userway){
-				userway.style.bottom = cookieModalOpen.offsetHeight+'px';
-				stopUserwayChecker();
-			}
-		}
-		if (stopAfter == 50){
-			stopUserwayChecker();
-		}
-		stopAfter++;
-	}
-	function stopUserwayChecker() {
-		clearInterval(userwayInterval);
-	}
-	/*Adding style to top bar parent modal*/
-	var cookieModal = document.getElementsByClassName('cookie-notice-modal-validator');
-	var cookieButton = document.getElementsByClassName('cookie-notice-close');
-	if (cookieButton && cookieModal && cookieButton[0]){
-		cookieButton[0].addEventListener("click", closeCookieFunction);
-	}
-	if (cookie_notice_wrapper){
-		cookie_notice_wrapper.parentElement.style.top = "auto";
-		cookie_notice_wrapper.parentElement.style.bottom = "0";
-		cookie_notice_wrapper.parentElement.style.height = "auto";
-	}
-})();
-</script>
+<!--<script type="text/javascript" id="ct_code_block_js_100162">/*Set size container of the cookie notice and prevent modal overlay*/-->
+<!--(function(){-->
+<!--	var stopAfter = 0;-->
+<!--	var userwayInterval = setInterval(checkIfUserWayLoaded, 1000);-->
+<!--	var cookie_notice_wrapper = document.querySelector(".cookie-notice-modal-validator");-->
+<!--	if (document.cookie.indexOf('STYXKEY-cookie-notice-cookie=') != -1 && cookie_notice_wrapper){-->
+<!--		console.log(cookie_notice_wrapper);-->
+<!--		cookie_notice_wrapper.innerHTML = "";-->
+<!--	}-->
+<!--	function closeCookieFunction(e){-->
+<!--		e.preventDefault();-->
+<!--		cookieModal[0].classList.remove("cookie-notice-modal-open");-->
+<!--		cookieModal[0].classList.add("cookie-notice-bar-animation");-->
+<!--		callcookie("STYXKEY-cookie-notice-cookie", true, 1);-->
+<!--		var userway = document.querySelector('#userwayAccessibilityIcon');-->
+<!--		if (userway){-->
+<!--			userway.style.bottom = '0px';-->
+<!--			stopUserwayChecker();-->
+<!--		}-->
+<!--	}-->
+<!--	/*cookie 24 hours*/-->
+<!--	function callcookie(name,value,days){-->
+<!--		if(days){-->
+<!--			var d=new Date();-->
+<!--			d.setTime(d.getTime()+(days*24*60*60*1000));-->
+<!--			var expires = "; expires="+d.toGMTString();-->
+<!--		} else {-->
+<!--			var expires = "";-->
+<!--		}-->
+<!--		document.cookie = name+"="+value+expires+"; path=/";-->
+<!--	}-->
+<!--	function checkIfUserWayLoaded(){-->
+<!--		var cookieModalOpen = document.querySelector('.cookie-notice-modal-open');-->
+<!--		/*if modal open, add bottom to userway*/-->
+<!--		if (cookieModalOpen && parseInt(cookieModalOpen.offsetHeight) > 0){-->
+<!--			var userway = document.querySelector('#userwayAccessibilityIcon');-->
+<!--			if (userway){-->
+<!--				userway.style.bottom = cookieModalOpen.offsetHeight+'px';-->
+<!--				stopUserwayChecker();-->
+<!--			}-->
+<!--		}-->
+<!--		if (stopAfter == 50){-->
+<!--			stopUserwayChecker();-->
+<!--		}-->
+<!--		stopAfter++;-->
+<!--	}-->
+<!--	function stopUserwayChecker() {-->
+<!--		clearInterval(userwayInterval);-->
+<!--	}-->
+<!--	/*Adding style to top bar parent modal*/-->
+<!--	var cookieModal = document.getElementsByClassName('cookie-notice-modal-validator');-->
+<!--	var cookieButton = document.getElementsByClassName('cookie-notice-close');-->
+<!--	if (cookieButton && cookieModal && cookieButton[0]){-->
+<!--		cookieButton[0].addEventListener("click", closeCookieFunction);-->
+<!--	}-->
+<!--	if (cookie_notice_wrapper){-->
+<!--		cookie_notice_wrapper.parentElement.style.top = "auto";-->
+<!--		cookie_notice_wrapper.parentElement.style.bottom = "0";-->
+<!--		cookie_notice_wrapper.parentElement.style.height = "auto";-->
+<!--	}-->
+<!--})();-->
+<!--</script>-->
 <script type="text/javascript" id="ct_code_block_js_100161">/*Select text inside search field after click search button*/
 (function ($) {
 	$(".oxy-header-search_toggle").click(function () {
