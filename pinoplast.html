@@ -349,37 +349,11 @@
 </section>
 <section id="section-31-100" class=" ct-section" >
     <div class="ct-section-inner-wrap">
-        <video id="image-20-100" class="ct-image" sizes="(max-width: 1920px) 100vw, 1920px" width="814" height="458">
+        <video style="width: 100%" id="image-20-100" class="ct-image" sizes="(max-width: 1920px) 100vw, 1920px" playsinline autoplay muted loop>
             <source src="https://antiq-od.github.io/IMG_1539.MOV" type="video/mp4">
             <!-- Add additional source elements for other video formats if needed -->
             Your browser does not support the video tag.
         </video>
-        <script>
-			document.addEventListener('DOMContentLoaded', function() {
-				// Select the video element by its ID
-				const video = document.getElementById('image-20-100');
-
-				// Ensure the video is muted and plays inline
-				video.loop = true;
-				video.muted = true;
-				video.playsInline = true;
-
-				// Add an event listener for the 'click' event to play the video
-				video.addEventListener('click', function() {
-					video.play();
-				}, false);
-
-				// Try to autoplay the video programmatically
-				video.play().catch(function(error) {
-					// Autoplay was prevented
-					console.log('Autoplay prevented:', error);
-				});
-
-				// Optionally trigger a click event to ensure it plays
-				video.click();
-			});
-
-        </script>
     </div>
 </section>
 <div id="div_block-9-97" class="ct-div-block subpages-container" >
