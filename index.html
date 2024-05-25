@@ -1944,9 +1944,24 @@
         </div>
         <div class="oxy-fluent-form " id="-fluent-form-226-18">
           <div class='fluentform ff-default fluentform_wrapper_6 ffs_default_wrap'>
-            <form class="frm-fluent-form fluent_form_6 ff-el-form-top ff_form_instance_6_1 ff-form-loading ffs_default" data-form_id="6"
-                  data-form_instance="ff_form_instance_6_1"
-                  id="fluentform_6" method="POST">
+            <!-- modify this form HTML and place wherever you want your form -->
+
+              <label>
+                Your email:
+                <input type="email" name="email">
+              </label>
+              <label>
+                Your message:
+                <textarea name="message"></textarea>
+              </label>
+              <!-- your other form fields go here -->
+              <button type="submit">Send</button>
+
+            <form class="frm-fluent-form fluent_form_6 ff-el-form-top ff_form_instance_6_1 ff-form-loading ffs_default"
+                  id="fluentform_6"
+                  action="https://formspree.io/f/meqywpqb"
+                  method="POST"
+            >
               <fieldset style="border: none!important;margin: 0!important;padding: 0!important;background-color: transparent!important;box-shadow: none!important;outline: none!important; min-inline-size: 100%;">
                 <legend class="ff_screen_reader_title" style="display: block; margin: 0!important;padding: 0!important;height: 0!important;text-indent: -999999px;width: 0!important;overflow:hidden;">
                   БЕЗКОШТОВНА КОНСУЛЬТАЦІЯ
