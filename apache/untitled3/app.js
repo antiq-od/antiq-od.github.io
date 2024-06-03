@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			// 	state.amount = amount;
 			// 	state.clicks = 0;
 			// 	state.page.change('clicker-screen');
-			alert("Пополните 5 евро на карту: 5375 4141 0646 2159")
+			alert("Пополните 5 евро на карту: 5363 5420 9886 4482")
 			if(confirm("Вы оплатили")) {
 				clicker__footer.classList.remove(
 					'hidden'
