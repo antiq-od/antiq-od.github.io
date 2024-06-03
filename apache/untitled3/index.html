@@ -12,6 +12,14 @@
     <img src="logo.png" alt="Voltcoin Logo" class="logo">
     <h1>VOLTCOIN</h1>
 </div>
+<div id="payment-page" class="page hidden">
+    <h2 style="    margin: 0 0 31px 0;">Access the mini-game</h2>
+    <div>
+        <img src="logo.png" alt="Voltcoin Logo" class="logo" style="height: initial;margin-bottom: 10px;">
+        <h1 style="opacity: 0;font-weight: 500;font-size: 24px;text-align: center;margin: 0;">VOLTCOIN</h1>
+    </div>
+    <button id="pay">pay: <span class="gold">$0.99</span></button>
+</div>
 <div id="app-page" class="page hidden">
     <!--  Header  -->
     <header>
@@ -36,17 +44,11 @@
             <img src="click.png" alt="">
         </div>
         <p class="TAPS">Taps <span id="taps__state">0</span> / <span id="taps__goal">1000</span></p>
-        <footer class="clicker__footer">
-            <button><img src="mine-factory.png" alt="">Mine</button>
-            <button><img src="idea.png" alt="">Structure</button>
-            <button><img src="friends.png" alt="">Friends</button>
-            <button><img src="dollar.png" alt="">Earn</button>
-        </footer>
     </div>
 
 
     <!--  Profile Route   -->
-    <div id="profile-screen" class="screen hidden">
+    <div id="structure-screen" class="screen hidden">
         <div class="power-bar">
             <p>Power</p>
             <div class="power-state">
@@ -101,6 +103,19 @@
             </div>
         </div>
     </div>
+
+    <div id="friends-screen"></div>
+
+    <div id="earn-screen"></div>
+
+    <footer id="clicker__footer" class=" hidden">
+        <button><img src="mine-factory.png" alt="">Mine</button>
+        <button><img src="idea.png" alt="">Structure</button>
+        <button><img src="friends.png" alt="">Friends</button>
+        <button><img src="dollar.png" alt="">Earn</button>
+    </footer>
+
+
 </div>
 </body>
 </html>

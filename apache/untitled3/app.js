@@ -3,10 +3,10 @@ const getIds = (...args) => args.map(arg => document.getElementById(arg))
 document.addEventListener("DOMContentLoaded", function() {
 
 	console.log(getIds(
-		"greetings-page", "app-page", "profile-screen", "clicker-screen", "profile-button", "settings-button"
+		"greetings-page", "app-page", "structure-screen", "clicker-screen", "profile-button", "settings-button"
 	))
-	const [ greetingsPage, appPage, profileScreen, clickerScreen, profileButton, settingsButton, taps__state, circle__button ] = getIds(
-		"greetings-page", "app-page", "profile-screen", "clicker-screen", "profile-button", "settings-button", "taps__state", "circle__button"
+	const [ greetingsPage, clicker__footer, paymentPage, pay, appPage, profileScreen, clickerScreen, profileButton, settingsButton, taps__state, circle__button ] = getIds(
+		"greetings-page", "clicker__footer", "payment-page", "pay", "app-page", "structure-screen", "clicker-screen", "profile-button", "settings-button", "taps__state", "circle__button"
 	);
 
 	const state = {
@@ -39,11 +39,30 @@ document.addEventListener("DOMContentLoaded", function() {
 		},
 	}
 
-	greetingsPage.onclick = () => state.page.change('app-page');
-	profileButton.onclick = () => state.page.replace('clicker-screen', 'profile-screen');
+	greetingsPage.onclick = () => state.page.change('payment-page');
+	pay.onclick = () => {
+
+		try {
+			// const amount = Number(document.getElementById('amount').value);
+			// if (amount > 0) {
+			// 	state.amount = amount;
+			// 	state.clicks = 0;
+			// 	state.page.change('clicker-screen');
+			// }
+		} finally {
+			clicker__footer.classList.remove(
+				'hidden'
+			)
+			state.page.change('app-page');
+		}
+	}
+	profileButton.onclick = () => state.page.replace('clicker-screen', 'structure-screen');
 	circle__button.onclick = () => {
 		taps__state.innerHTML = Number(taps__state.innerHTML) + 1
+
 	}
+
+
 
 	// greetingsPage.onclick = () => state.page.change();
 	// appPage.onclick = () => state.page.change();

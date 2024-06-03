@@ -1,9 +1,49 @@
+* {
+    box-sizing: border-box;
+}
 :root {
     --bg: #414141;
     --gold: #ffdf58;
     --voltcoin-cg: #9bffcb;
     --second-lvl-bg: #656565;
     --third-lvl-bg: #414141;
+}
+.gold {
+    color: var(--gold);
+}
+
+#payment-page {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 15%;
+    padding-top: 6%;
+}
+
+#payment-page img {
+    width: 99px;
+}
+#payment-page button {
+    background-color: var(--second-lvl-bg);
+    border-radius: 10px;
+    color: var(--voltcoin-cg);
+    border: var(--voltcoin-cg);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 100%;
+    border: 1px solid var(--voltcoin-cg);
+}
+
+#payment-page button:hover {
+    background-color: var(--voltcoin-cg);
+    color: var(--second-lvl-bg);
 }
 
 body {
@@ -69,6 +109,10 @@ nav button {
 }
 nav button img {
     width: 100%;
+    cursor: pointer;
+}
+#pay {
+    font-size: 17px;
 }
 #circle__button {
     width: 75%;
@@ -209,6 +253,7 @@ nav button img {
     text-align: center;
     font-size: 35px;
     margin-bottom: 12%;
+    margin-top: 189px;
 }
 #app-page {
     display: flex;
