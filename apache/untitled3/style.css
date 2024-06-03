@@ -24,6 +24,10 @@
 
 #payment-page img {
     width: 99px;
+    height: initial;
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
 }
 #payment-page button {
     background-color: var(--second-lvl-bg);
@@ -34,7 +38,7 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 3vh;
     margin: 4px 2px;
     cursor: pointer;
     width: 100%;
@@ -86,11 +90,16 @@ button {
     font-weight: 500;
     font-size: 24px;
     text-align: center;
+    position: absolute;
+    top: 66.7%;
+    transform: translateY(-50%);
 }
 #greetings-page img {
     width: 99px;
     height: initial;
-    margin-bottom: 10px;
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
 }
 
 nav {
