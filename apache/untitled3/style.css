@@ -288,6 +288,7 @@ nav button img {
 }
 
 .surprises button {
+    cursor: pointer;
     gap: 3%;
     width: 29.8%;
     aspect-ratio:  1 / 1;
@@ -301,6 +302,9 @@ nav button img {
 
 .surprises button img {
     height: 80%;
+    max-height: 80%;
+    min-height: 80%;
+    width: initial;
 }
 
 .mine-factory-button img {
