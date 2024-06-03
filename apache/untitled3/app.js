@@ -1,12 +1,25 @@
 const getIds = (...args) => args.map(arg => document.getElementById(arg))
 
+const toggleScreenVisibility = (specificElementId) => {
+	// Get all elements with the class name "screen"
+	var screenElements = document.getElementsByClassName('screen');
+
+	// Add the "hidden" class to each of these elements
+	for (var i = 0; i < screenElements.length; i++) {
+		screenElements[i].classList.add('hidden');
+	}
+
+	// Remove the "hidden" class from the specific element
+	var specificElement = document.getElementById(specificElementId);
+	if (specificElement) {
+		specificElement.classList.remove('hidden');
+	}
+}
+
 document.addEventListener("DOMContentLoaded", function() {
 
-	console.log(getIds(
-		"greetings-page", "app-page", "structure-screen", "clicker-screen", "profile-button", "settings-button"
-	))
-	const [ greetingsPage, clicker__footer, paymentPage, pay, appPage, profileScreen, clickerScreen, profileButton, settingsButton, taps__state, circle__button ] = getIds(
-		"greetings-page", "clicker__footer", "payment-page", "pay", "app-page", "structure-screen", "clicker-screen", "profile-button", "settings-button", "taps__state", "circle__button"
+	const [ greetingsPage, clicker__footer, mb1, mb2, mb3, mb4, paymentPage, pay, appPage, profileScreen, clickerScreen, profileButton, settingsButton, taps__state, circle__button ] = getIds(
+		"greetings-page", "clicker__footer", 'mb1', 'mb2', 'mb3', 'mb4', "payment-page", "pay", "app-page", "structure-screen", "clicker-screen", "profile-button", "settings-button", "taps__state", "circle__button"
 	);
 
 	const state = {
@@ -59,8 +72,13 @@ document.addEventListener("DOMContentLoaded", function() {
 	profileButton.onclick = () => state.page.replace('clicker-screen', 'structure-screen');
 	circle__button.onclick = () => {
 		taps__state.innerHTML = Number(taps__state.innerHTML) + 1
-
 	}
+
+	mb1.onclick = () => toggleScreenVisibility('clicker-screen');
+	mb2.onclick = () => toggleScreenVisibility('structure-screen');
+	mb3.onclick = () => toggleScreenVisibility('friends-screen');
+	mb4.onclick = () => toggleScreenVisibility('earn-screen');
+
 
 
 

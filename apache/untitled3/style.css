@@ -101,7 +101,8 @@ nav {
 }
 
 nav button {
-    width: 16%;
+    /*width: 16%;*/
+    height: 10vh;
     aspect-ratio: 1 / 1;
     padding: 0;
     margin: 0;
@@ -114,8 +115,21 @@ nav button img {
 #pay {
     font-size: 17px;
 }
+
+#clicker-screen {
+    position: fixed;
+    top: 39%;
+    left: 0;
+    right: 0;
+    transition: transform 0.2s ease;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
 #circle__button {
-    width: 75%;
+    height: 36vh;
     aspect-ratio: 1 / 1;
     border: 1px solid var(--voltcoin-cg);
     display: flex;
@@ -123,11 +137,6 @@ nav button img {
     justify-content: center;
     background-color: var(--second-lvl-bg);
     border-radius: 1000px;
-    margin: 0 auto;
-    position: fixed;
-    top: 31.5%;
-    left: 12%;
-    transition: transform 0.2s ease;
     cursor: pointer;
     overflow: hidden;
 }
@@ -148,6 +157,7 @@ nav button img {
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.5);
     transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none;
 }
 
 #circle__button:active::before {
@@ -192,9 +202,6 @@ nav button img {
 #circle__button img {
     height: 65%;
 }
-.level-c button {
-
-}
 .level-c {
     display: flex;
     justify-content: space-between;
@@ -203,12 +210,14 @@ nav button img {
 }
 .level-c button {
     width: 33.3%;
+    height: 8vh;
     background-color: var(--second-lvl-bg);
     padding: 10px 15px;
     border-radius: 15px;
     border: 1px solid var(--voltcoin-cg);
     min-height: 53px;
     text-align: center;
+    font-size: 2.1vh;
 }
 .hidden {
     display: none !important;
@@ -220,40 +229,51 @@ nav button img {
     justify-content: center;
     gap: 7.5px;
     color: var(--gold);
-    margin-top: 13%;
+    margin-top: 4vh;
 }
 .amount-v img {
-    height: 60px;
+    height: 8.7vh;
 }
 #voltcoin-amount {
-    font-size: 55px;
+    font-size: 8vh;
     font-weight: 800;
 }
 
-.clicker__footer {
+#clicker__footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 3%;
     gap: 3%;
+    height: 11vh;
+    background-color: var(--second-lvl-bg);
+    border-radius: 4vh;
 }
-.clicker__footer button {
-    width: 25%;
-    height: 105px;
-    background-color: transparent;
+#clicker__footer button:nth-child(2n) {
+    color: var(--gold);
+}
+#clicker__footer button {
+    width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    height: 100%;
+    background-color: var(--third-lvl-bg);
+    border: 1px solid var(--voltcoin-cg);
+    border-radius: 1.9vh;
+    overflow: hidden;
+    cursor: pointer;
 }
-.clicker__footer button img {
-    width: 100%;
+#clicker__footer button img {
+    height: 64%;
+    width: initial;
 }
 .TAPS {
     text-align: center;
-    font-size: 35px;
-    margin-bottom: 12%;
-    margin-top: 189px;
+    margin-bottom: 0;
+    margin-top: 2.3vh;
+    font-size: 4vh;
 }
 #app-page {
     display: flex;
@@ -303,6 +323,7 @@ nav button img {
 .mine-desc {
     display: flex;
     gap: 5%;
+    margin-bottom: 4%;
 }
 
 .mine-desc > div {
