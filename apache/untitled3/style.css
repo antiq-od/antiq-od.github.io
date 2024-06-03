@@ -18,7 +18,7 @@
     justify-content: space-between;
     flex-direction: column;
     text-align: center;
-    padding-bottom: 15%;
+    padding-bottom: 7%;
     padding-top: 6%;
 }
 
@@ -34,7 +34,6 @@
     border-radius: 10px;
     color: var(--voltcoin-cg);
     border: var(--voltcoin-cg);
-    padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -43,6 +42,7 @@
     cursor: pointer;
     width: 100%;
     border: 1px solid var(--voltcoin-cg);
+    padding: 1vh 0;
 }
 
 #logo-button {
@@ -134,6 +134,14 @@ nav button img {
 }
 #pay {
     font-size: 17px;
+}
+
+#payment-page #pay4 {
+    display: flex;
+    justify-content: center;
+    background: transparent;
+    border: transparent;
+    gap: 1%;
 }
 
 #clicker-screen {
