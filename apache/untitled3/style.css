@@ -45,6 +45,17 @@
     border: 1px solid var(--voltcoin-cg);
 }
 
+#logo-button {
+    transform: scale(0.9);
+}
+
+.center-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5%;
+}
+
 #payment-page button:hover {
     background-color: var(--voltcoin-cg);
     color: var(--second-lvl-bg);

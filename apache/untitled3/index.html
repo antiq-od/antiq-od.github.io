@@ -15,13 +15,17 @@
 <div id="payment-page" class="page hidden">
     <h2>Access the mini-game</h2>
     <img src="logo.png" alt="Voltcoin Logo" class="logo">
-    <button id="pay">pay: <span class="gold">$0.99</span></button>
+    <div class="center-container">
+        <button id="pay">pay: <span class="gold">$0.99</span></button>
+        <button id="pay1">pay: <span class="gold">$0.99</span></button>
+    </div>
 </div>
 <div id="app-page" class="page hidden">
     <!--  Header  -->
     <header>
         <nav>
             <button id="profile-button"><img src="profile.png" alt=""></button>
+            <button id="logo-button"><img src="logotypej.png" alt=""></button>
             <button id="settings-button"><img src="settings.png" alt=""></button>
         </nav>
         <div class="level-c">
@@ -43,8 +47,7 @@
         <p class="TAPS">Taps <span id="taps__state">0</span> / <span id="taps__goal">1000</span></p>
     </div>
 
-    <!--  Profile Route   -->
-    <div id="structure-screen" class="screen hidden">
+    <div id="minefactory-screen" class="screen hidden">
         <div class="power-bar">
             <p>Power</p>
             <div class="power-state">
@@ -96,6 +99,62 @@
                     </div>
                 </div>
                 <h4 class="button-text">Steam Power Plant</h4>
+            </div>
+        </div>
+    </div>
+
+    <div id="structure-screen" class="screen hidden">
+        <div class="power-bar">
+            <p>Power</p>
+            <div class="power-state">
+                <span class="blant cm30"></span>
+                <span class="blant cm60"></span>
+                <span class="blant cm100 minus"></span>
+            </div>
+            <div class="progress">
+                <img src="voltcoin-sip.png" alt="">
+                <span id="power__balance">+10000</span>
+            </div>
+        </div>
+        <div class="surprises">
+            <button id="surprise1"><img src="queso.png" alt=""></button>
+            <button id="surprise2"><img src="queso.png" alt=""></button>
+            <button id="surprise3"><img src="queso.png" alt=""></button>
+        </div>
+        <button class="mine-factory-button">
+            <img src="idea1.png" alt="Mine Factory Logo" class="logo">
+            Structure
+        </button>
+        <div class="mine-desc">
+            <div class="left-t">
+                <div class="flex__double">
+                    <div class="left-r">
+                        <img src="electricity.png" alt="Steam Power Plant">
+                    </div>
+                    <div class="right-r">
+                        <h5>lvl <span id="castle__lvl">+1</span></h5>
+                        <p>
+                            <img src="zero.png" class="mini__logo">
+                            <span id="steamPP__amount">800</span>
+                        </p>
+                    </div>
+                </div>
+                <h4 class="button-text">D. C.</h4>
+            </div>
+            <div class="right-t">
+                <div class="flex__double">
+                    <div class="left-r">
+                        <img src="transformator.png" alt="Steam Power Plant">
+                    </div>
+                    <div class="right-r">
+                        <h5>lvl <span id="solar_lvl">+2</span></h5>
+                        <p>
+                            <img src="zero.png" alt="Solar Panels" class="mini__logo">
+                            <span id="solarP__amount">2000</span>
+                        </p>
+                    </div>
+                </div>
+                <h4 class="button-text">A.C</h4>
             </div>
         </div>
     </div>

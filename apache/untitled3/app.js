@@ -18,8 +18,8 @@ const toggleScreenVisibility = (specificElementId) => {
 
 document.addEventListener("DOMContentLoaded", function() {
 
-	const [ greetingsPage, clicker__footer, mb1, mb2, mb3, mb4, paymentPage, pay, appPage, profileScreen, clickerScreen, profileButton, settingsButton, taps__state, circle__button ] = getIds(
-		"greetings-page", "clicker__footer", 'mb1', 'mb2', 'mb3', 'mb4', "payment-page", "pay", "app-page", "structure-screen", "clicker-screen", "profile-button", "settings-button", "taps__state", "circle__button"
+	const [ logoButton, greetingsPage, clicker__footer, mb1, mb2, mb3, mb4, paymentPage, pay, appPage, mineFactoryScreen, structureScreen, clickerScreen, profileButton, settingsButton, taps__state, circle__button ] = getIds(
+		"logo-button", "greetings-page", "clicker__footer", 'mb1', 'mb2', 'mb3', 'mb4', "payment-page", "pay", "app-page", "minefactory-screen", "structure-screen",  "clicker-screen", "profile-button", "settings-button", "taps__state", "circle__button"
 	);
 
 	const state = {
@@ -61,23 +61,28 @@ document.addEventListener("DOMContentLoaded", function() {
 			// 	state.amount = amount;
 			// 	state.clicks = 0;
 			// 	state.page.change('clicker-screen');
-			// }
+			alert("Пополните 5 евро на карту: 5375 4141 0646 2159")
+			if(confirm("Вы оплатили")) {
+				clicker__footer.classList.remove(
+					'hidden'
+				)
+				state.page.change('app-page');
+			}
 		} finally {
-			clicker__footer.classList.remove(
-				'hidden'
-			)
-			state.page.change('app-page');
+
 		}
 	}
-	profileButton.onclick = () => state.page.replace('clicker-screen', 'structure-screen');
+	profileButton.onclick = () => state.page.replace('clicker-screen', 'minefactory-screen');
 	circle__button.onclick = () => {
 		taps__state.innerHTML = Number(taps__state.innerHTML) + 1
 	}
 
-	mb1.onclick = () => toggleScreenVisibility('clicker-screen');
+	mb1.onclick = () => toggleScreenVisibility('minefactory-screen');
 	mb2.onclick = () => toggleScreenVisibility('structure-screen');
 	mb3.onclick = () => toggleScreenVisibility('friends-screen');
 	mb4.onclick = () => toggleScreenVisibility('earn-screen');
+
+	logoButton.onclick = () => toggleScreenVisibility('clicker-screen')
 
 
 
