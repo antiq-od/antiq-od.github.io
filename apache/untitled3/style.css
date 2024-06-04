@@ -122,7 +122,7 @@ nav {
 
 nav button {
     /*width: 16%;*/
-    height: 10vh;
+    height: 8vh;
     aspect-ratio: 1 / 1;
     padding: 0;
     margin: 0;
@@ -238,14 +238,13 @@ nav button img {
 }
 .level-c button {
     width: 33.3%;
-    height: 8vh;
+    height: 7vh;
     background-color: var(--second-lvl-bg);
-    padding: 10px 15px;
+    padding: 0vh 15px;
     border-radius: 15px;
     border: 1px solid var(--voltcoin-cg);
-    min-height: 53px;
     text-align: center;
-    font-size: 2.1vh;
+    font-size: 2vh;
 }
 .hidden {
     display: none !important;
@@ -257,10 +256,11 @@ nav button img {
     justify-content: center;
     gap: 7.5px;
     color: var(--gold);
-    margin-top: 4vh;
+    margin-top: 2vh;
 }
 .amount-v img {
-    height: 8.7vh;
+    height: 5.7vh;
+    transform: scale(1.5);
 }
 #voltcoin-amount {
     font-size: 8vh;
@@ -318,7 +318,7 @@ nav button img {
 .surprises button {
     cursor: pointer;
     gap: 3%;
-    width: 29.8%;
+    width: 31.8%;
     aspect-ratio:  1 / 1;
     background-color: var(--second-lvl-bg);
     padding: 10px 15px;
@@ -348,8 +348,8 @@ nav button img {
     font-weight: bold;
     background-color: var(--second-lvl-bg);
     width: 100%;
-    margin: 4% 0;
-    padding: 5.5% 3%;
+    margin: 3% 0;
+    padding: 1.37vh 2vw;
 }
 
 .mine-desc {
@@ -377,20 +377,22 @@ nav button img {
     justify-content: space-between;
     align-items: center;
     padding: 0 3%;
-    height: 93.51px;
+    height: 9vh;
 }
 
 .left-r {
-    border-right: 0.5px solid var(--voltcoin-cg);
+    border-right: 1px solid var(--voltcoin-cg);
     width: 50%;
-    aspect-ratio: 1 / 1;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .right-r {
     width: 50%;
-    border-left: 0.5px solid var(--voltcoin-cg);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 /*.left-r, .right-r {*/
@@ -403,7 +405,7 @@ nav button img {
 }
 
 .left-r img {
-    margin-top: 6px;
+    width: 64%;
 }
 
 body .mini__logo {
@@ -411,9 +413,14 @@ body .mini__logo {
 }
 
 .button-text {
-    margin: 7px 0 8px 0;
-    padding-top: 8px;
+    margin: auto;
+    font-size: 2.5vh;
+    height: 6.8vh;
+    display: flex;
     border-top: 1px solid var(--voltcoin-cg);
+    align-items: center;
+    justify-content: center;
+}
 }
 
 .button-text {
@@ -421,18 +428,18 @@ body .mini__logo {
 }
 
 .right-r h5 {
-    margin: 7px 0 5px 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0;
 }
 
 .right-r p {
-    margin: 7px 0 9px 0;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 3%;
+    margin: 0;
 }
 
 .power-bar {
@@ -441,7 +448,7 @@ body .mini__logo {
     justify-content: space-between;
     gap: 3%;
     background-color: var(--second-lvl-bg);
-    margin: 4% 0;
+    margin: 2% 0;
     padding: 0 3%;
     border-radius: 15px;
 }
