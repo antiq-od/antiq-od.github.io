@@ -42,7 +42,7 @@
     cursor: pointer;
     width: 100%;
     border: 1px solid var(--voltcoin-cg);
-    padding: 1vh 0;
+    padding: 2.1vh 0;
 }
 
 #logo-button {
@@ -136,17 +136,39 @@ nav button img {
     font-size: 17px;
 }
 
-#payment-page #pay4 {
+#payment-type {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 25% 3.5% 3.5%;
+}
+#payment-start.blur {
+    filter: blur(10.1px);
+}
+#payment-type .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000059;
+    filter: blur(1vh);
+    z-index: -1;
+}
+
+#payment-start {
     display: flex;
-    justify-content: center;
-    background: transparent;
-    border: transparent;
-    gap: 1%;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
 }
 
 #clicker-screen {
     position: fixed;
-    top: 39%;
+    top: 31%;
     left: 0;
     right: 0;
     transition: transform 0.2s ease;
@@ -300,8 +322,9 @@ nav button img {
 .TAPS {
     text-align: center;
     margin-bottom: 0;
-    margin-top: 2.3vh;
+    margin-top: 7.3vh;
     font-size: 4vh;
+    font-weight: bold;
 }
 #app-page {
     display: flex;
@@ -377,7 +400,7 @@ nav button img {
     justify-content: space-between;
     align-items: center;
     padding: 0 3%;
-    height: 9vh;
+    height: 12vh;
 }
 
 .left-r {
@@ -386,6 +409,7 @@ nav button img {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100%;
 }
 .right-r {
     width: 50%;
@@ -405,7 +429,9 @@ nav button img {
 }
 
 .left-r img {
-    width: 64%;
+    /*width: 64%;*/
+    height: 80%;
+    width: initial;
 }
 
 body .mini__logo {
@@ -424,6 +450,7 @@ body .mini__logo {
 
 .button-text {
     text-align: center;
+    margin: 0 4.3vw;
 }
 
 .right-r h5 {
@@ -441,6 +468,9 @@ body .mini__logo {
     margin: 0;
 }
 
+#profile-button.hidden {
+    /*display: contents !important;*/
+}
 .power-bar {
     display: flex;
     align-items: center;
@@ -489,4 +519,94 @@ body .mini__logo {
 
 #power__balance {
     font-size: 18px;
+}
+
+.block {
+    border-radius: 3vh;
+    padding: 2vh 2vw;
+    background: var(--second-lvl-bg);
+}
+
+.block-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2%;
+    color: var(--voltcoin-cg);
+}
+
+.img-cont img {
+    width: 100%;
+}
+.img-cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    width: 7vh;
+    border-radius: 5vh;
+    padding: 1vh;
+    border: 1px solid var(--voltcoin-cg);
+    background-color: var(--third-lvl-bg);
+}
+
+.img-cont + p {
+    min-height: 7vh;
+    width: 100%;
+    margin: 1vh 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2vh;
+    border: 1px solid var(--voltcoin-cg);
+    background-color: var(--third-lvl-bg);
+}
+#profile-screen, #settings-screen {
+    position: absolute;
+    top: 20%;
+    width: 93%;
+}
+
+#settings-screen .img-cont{
+    aspect-ratio: initial;
+    width: initial;
+    border-radius: initial;
+    border: none;
+    background-color: transparent;
+}
+
+#settings-screen .block-item{
+    background: var(--third-lvl-bg);
+    border-radius: 2vh;
+    border: 1px solid var(--voltcoin-cg);
+    margin-bottom: 1vh;
+    font-weight: bold;
+    padding: 1vh 1.5vw;
+    cursor: pointer;
+}
+
+.super-input {
+    display: inline-block;
+    height: 5vh;
+    width: 16vw;
+    background-color: gray;
+    padding: 0.5vh;
+    border-radius: 3vh;
+    transition: .3s;
+}
+
+.super-input-child {
+    display: inline-block;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: var(--voltcoin-cg);
+    border-radius: 3vh;
+    transition: .3s;
+}
+
+.block-item.active .super-input {
+    background-color: var(--gold);
+}
+.block-item.active .super-input-child {
+    transform: translateX(8vw);
 }

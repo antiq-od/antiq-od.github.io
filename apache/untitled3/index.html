@@ -13,33 +13,40 @@
     <h1>VOLTCOIN</h1>
 </div>
 <div id="payment-page" class="page hidden">
-    <h2>Access the mini-game</h2>
-    <img src="logo.png" alt="Voltcoin Logo" class="logo">
-    <div>
-        <button id="pay">VISA | MASTERCARD</button>
-        <button id="pay2">
-<!--            <img src="IMG_8545.PNG "/>-->
-            CRYPTO TRANSACTIONS
-        </button>
-        <button id="pay4">pay: <span class="gold">$0.99</span></button>
+    <div id="payment-start" class="screen">
+        <h2>Access the mini-game</h2>
+        <img src="logo.png" alt="Voltcoin Logo" class="logo">
+        <button id="pay">pay: <span class="gold">$0.99</span></button>
+    </div>
+    <div id="payment-type" class="screen hidden">
+        <div class="overlay"></div>
+        <button id="visa-master-pay">Visa | Mastercard</button>
+        <button id="crypto-pay">CRYPTO TRANSACTIONS</button>
     </div>
 </div>
 <div id="app-page" class="page hidden">
     <!--  Header  -->
-    <header>
+    <header id="header">
         <nav>
-            <button id="profile-button"><img src="profile.png" alt=""></button>
+            <button id="profile-button">
+                <img src="profile.png" alt="" id="nav1-profile-img">
+                <img src="voltcoin-sip.png" class="hidden" id="nav1-clicker-img" alt="">
+            </button>
             <button id="logo-button"><img src="logotypej.png" alt=""></button>
-            <button id="settings-button"><img src="settings.png" alt=""></button>
+            <button id="settings-button">
+                <img src="settings.png" alt="" id="nav3-settings-img">
+            </button>
         </nav>
-        <div class="level-c">
-            <button>Level 6</button>
-            <button>Фарминг<br> 03:00</button>
-            <button>Прибыль в<br> час 25К</button>
-        </div>
-        <div class="amount-v">
-            <img src="vibe.png" alt="Voltcoin Logo" class="logo">
-            <span id="voltcoin-amount">435 210</span>
+        <div id="header-details">
+            <div class="level-c">
+                <button>Level 6</button>
+                <button>Фарминг<br> 03:00</button>
+                <button>Прибыль в<br> час 25К</button>
+            </div>
+            <div class="amount-v">
+                <img src="vibe.png" alt="Voltcoin Logo" class="logo">
+                <span id="voltcoin-amount">435 210</span>
+            </div>
         </div>
     </header>
 
@@ -48,7 +55,7 @@
         <div id="circle__button">
             <img src="click.png" alt="">
         </div>
-        <p class="TAPS">Taps <span id="taps__state">0</span> / <span id="taps__goal">1000</span></p>
+        <p class="TAPS">Taps: <span id="taps__state">0</span> / <span id="taps__goal">1000</span></p>
     </div>
 
     <div id="minefactory-screen" class="screen hidden">
@@ -87,7 +94,7 @@
                         </p>
                     </div>
                 </div>
-                <h4 class="button-text">Steam Power Plant</h4>
+                <h4 class="button-text">Steam power plant</h4>
             </div>
             <div class="right-t">
                 <div class="flex__double">
@@ -102,7 +109,135 @@
                         </p>
                     </div>
                 </div>
-                <h4 class="button-text">Steam Power Plant</h4>
+                <h4 class="button-text">Solar panels</h4>
+            </div>
+        </div>
+        <div class="mine-desc">
+            <div class="left-t">
+                <div class="flex__double">
+                    <div class="left-r">
+                        <img src="station.png" alt="Steam Power Plant">
+                    </div>
+                    <div class="right-r">
+                        <h5>lvl <span id="castle__lvl">+1</span></h5>
+                        <p>
+                            <img src="zero.png" class="mini__logo">
+                            <span id="steamPP__amount">800</span>
+                        </p>
+                    </div>
+                </div>
+                <h4 class="button-text">Wooden windmill</h4>
+            </div>
+            <div class="right-t">
+                <div class="flex__double">
+                    <div class="left-r">
+                        <img src="airlines.png" alt="Steam Power Plant">
+                    </div>
+                    <div class="right-r">
+                        <h5>lvl <span id="solar_lvl">+2</span></h5>
+                        <p>
+                            <img src="zero.png" alt="Solar Panels" class="mini__logo">
+                            <span id="solarP__amount">2000</span>
+                        </p>
+                    </div>
+                </div>
+                <h4 class="button-text">Wind power plant</h4>
+            </div>
+        </div>
+        <div class="mine-desc">
+            <div class="left-t">
+                <div class="flex__double">
+                    <div class="left-r">
+                        <img src="flexVibe14.jpg" alt="Steam Power Plant">
+                    </div>
+                    <div class="right-r">
+                        <h5>lvl <span id="castle__lvl">+1</span></h5>
+                        <p>
+                            <img src="zero.png" class="mini__logo">
+                            <span id="steamPP__amount">800</span>
+                        </p>
+                    </div>
+                </div>
+                <h4 class="button-text">Hydro station</h4>
+            </div>
+            <div class="right-t">
+                <div class="flex__double">
+                    <div class="left-r">
+                        <img src="flexVibe12.jpg" alt="Steam Power Plant">
+                    </div>
+                    <div class="right-r">
+                        <h5>lvl <span id="solar_lvl">+2</span></h5>
+                        <p>
+                            <img src="zero.png" alt="Solar Panels" class="mini__logo">
+                            <span id="solarP__amount">2000</span>
+                        </p>
+                    </div>
+                </div>
+                <h4 class="button-text">Hydroelectric station</h4>
+            </div>
+        </div>
+        <div class="mine-desc">
+            <div class="left-t">
+                <div class="flex__double">
+                    <div class="left-r">
+                        <img src="flexVibe11.jpg" alt="Steam Power Plant">
+                    </div>
+                    <div class="right-r">
+                        <h5>lvl <span id="castle__lvl">+1</span></h5>
+                        <p>
+                            <img src="zero.png" class="mini__logo">
+                            <span id="steamPP__amount">800</span>
+                        </p>
+                    </div>
+                </div>
+                <h4 class="button-text">Geothermal energy</h4>
+            </div>
+            <div class="right-t">
+                <div class="flex__double">
+                    <div class="left-r">
+                        <img src="flexVibe10.jpg" alt="Steam Power Plant">
+                    </div>
+                    <div class="right-r">
+                        <h5>lvl <span id="solar_lvl">+2</span></h5>
+                        <p>
+                            <img src="zero.png" alt="Solar Panels" class="mini__logo">
+                            <span id="solarP__amount">2000</span>
+                        </p>
+                    </div>
+                </div>
+                <h4 class="button-text">Thermal power plant</h4>
+            </div>
+        </div>
+        <div class="mine-desc">
+            <div class="left-t">
+                <div class="flex__double">
+                    <div class="left-r">
+                        <img src="flexVibe9.jpg" alt="Steam Power Plant">
+                    </div>
+                    <div class="right-r">
+                        <h5>lvl <span id="castle__lvl">+1</span></h5>
+                        <p>
+                            <img src="zero.png" class="mini__logo">
+                            <span id="steamPP__amount">800</span>
+                        </p>
+                    </div>
+                </div>
+                <h4 class="button-text">Radiation</h4>
+            </div>
+            <div class="right-t">
+                <div class="flex__double">
+                    <div class="left-r">
+                        <img src="radiations.png" alt="Steam Power Plant">
+                    </div>
+                    <div class="right-r">
+                        <h5>lvl <span id="solar_lvl">+2</span></h5>
+                        <p>
+                            <img src="zero.png" alt="Solar Panels" class="mini__logo">
+                            <span id="solarP__amount">2000</span>
+                        </p>
+                    </div>
+                </div>
+                <h4 class="button-text">Nuclear station</h4>
             </div>
         </div>
     </div>
@@ -138,7 +273,7 @@
                     <div class="right-r">
                         <h5>lvl <span id="castle__lvl">+1</span></h5>
                         <p>
-                            <img src="zero.png" class="mini__logo">
+                            <img src="flexVibe8.jpg" class="mini__logo">
                             <span id="steamPP__amount">800</span>
                         </p>
                     </div>
@@ -148,7 +283,39 @@
             <div class="right-t">
                 <div class="flex__double">
                     <div class="left-r">
-                        <img src="transformator.png" alt="Steam Power Plant">
+                        <img src="electricity2.jpg" alt="Steam Power Plant">
+                    </div>
+                    <div class="right-r">
+                        <h5>lvl <span id="solar_lvl">+2</span></h5>
+                        <p>
+                            <img src="flexVibe7.jpg" alt="Solar Panels" class="mini__logo">
+                            <span id="solarP__amount">2000</span>
+                        </p>
+                    </div>
+                </div>
+                <h4 class="button-text">A.C</h4>
+            </div>
+        </div>
+        <div class="mine-desc">
+            <div class="left-t">
+                <div class="flex__double">
+                    <div class="left-r">
+                        <img src="flexVibe8.jpg" alt="Steam Power Plant">
+                    </div>
+                    <div class="right-r">
+                        <h5>lvl <span id="castle__lvl">+1</span></h5>
+                        <p>
+                            <img src="zero.png" class="mini__logo">
+                            <span id="steamPP__amount">800</span>
+                        </p>
+                    </div>
+                </div>
+                <h4 class="button-text">Рower line</h4>
+            </div>
+            <div class="right-t">
+                <div class="flex__double">
+                    <div class="left-r">
+                        <img src="flexVibe7.jpg" alt="Steam Power Plant">
                     </div>
                     <div class="right-r">
                         <h5>lvl <span id="solar_lvl">+2</span></h5>
@@ -158,14 +325,165 @@
                         </p>
                     </div>
                 </div>
-                <h4 class="button-text">A.C</h4>
+                <h4 class="button-text">High voltage</h4>
+            </div>
+        </div>
+        <div class="mine-desc">
+            <div class="left-t">
+                <div class="flex__double">
+                    <div class="left-r">
+                        <img src="transformator.png" alt="Steam Power Plant">
+                    </div>
+                    <div class="right-r">
+                        <h5>lvl <span id="castle__lvl">+1</span></h5>
+                        <p>
+                            <img src="zero.png" class="mini__logo">
+                            <span id="steamPP__amount">800</span>
+                        </p>
+                    </div>
+                </div>
+                <h4 class="button-text">Transformer</h4>
+            </div>
+            <div class="right-t">
+                <div class="flex__double">
+                    <div class="left-r">
+                        <img src="flexVibe5.jpg" alt="Steam Power Plant">
+                    </div>
+                    <div class="right-r">
+                        <h5>lvl <span id="solar_lvl">+2</span></h5>
+                        <p>
+                            <img src="zero.png" alt="Solar Panels" class="mini__logo">
+                            <span id="solarP__amount">2000</span>
+                        </p>
+                    </div>
+                </div>
+                <h4 class="button-text">HVDC</h4>
+            </div>
+        </div>
+        <div class="mine-desc">
+            <div class="left-t">
+                <div class="flex__double">
+                    <div class="left-r">
+                        <img src="flexVibe4.jpg" alt="Steam Power Plant">
+                    </div>
+                    <div class="right-r">
+                        <h5>lvl <span id="castle__lvl">+1</span></h5>
+                        <p>
+                            <img src="zero.png" class="mini__logo">
+                            <span id="steamPP__amount">800</span>
+                        </p>
+                    </div>
+                </div>
+                <h4 class="button-text">Converter stations</h4>
+            </div>
+            <div class="right-t">
+                <div class="flex__double">
+                    <div class="left-r">
+                        <img src="flexVibe3.jpg" alt="Steam Power Plant">
+                    </div>
+                    <div class="right-r">
+                        <h5>lvl <span id="solar_lvl">+2</span></h5>
+                        <p>
+                            <img src="zero.png" alt="Solar Panels" class="mini__logo">
+                            <span id="solarP__amount">2000</span>
+                        </p>
+                    </div>
+                </div>
+                <h4 class="button-text">Cable systems</h4>
+            </div>
+        </div>
+        <div class="mine-desc">
+            <div class="left-t">
+                <div class="flex__double">
+                    <div class="left-r">
+                        <img src="flexVibe2.jpg" alt="Steam Power Plant">
+                    </div>
+                    <div class="right-r">
+                        <h5>lvl <span id="castle__lvl">+1</span></h5>
+                        <p>
+                            <img src="zero.png" class="mini__logo">
+                            <span id="steamPP__amount">800</span>
+                        </p>
+                    </div>
+                </div>
+                <h4 class="button-text">Superconductors</h4>
+            </div>
+            <div class="right-t">
+                <div class="flex__double">
+                    <div class="left-r">
+                        <img src="flexVibe1.jpg" alt="Steam Power Plant">
+                    </div>
+                    <div class="right-r">
+                        <h5>lvl <span id="solar_lvl">+2</span></h5>
+                        <p>
+                            <img src="zero.png" alt="Solar Panels" class="mini__logo">
+                            <span id="solarP__amount">2000</span>
+                        </p>
+                    </div>
+                </div>
+                <h4 class="button-text">Renewable energy</h4>
             </div>
         </div>
     </div>
 
-    <div id="friends-screen" class="hidden"></div>
+    <div id="friends-screen" class="screen hidden">
+        <h2>Invite your friends!</h2>
+        <p>You and your friend will receive bonuses</p>
 
-    <div id="earn-screen" class="hidden"></div>
+        <div class="invite-friend-big-button">
+            <img src="gift.png" alt="">
+            <div class="right-column">
+                <h4>To invite a friend</h4>
+                <p>30% energy every morning from your friend <br>+<img src="zero.png" class="mini__logo">5000 for the first entry to your friend</p>
+            </div>
+        </div>
+
+        <h3>List of your friends</h3>
+        <button class="friends-button">You haven't invited anyone yet</button>
+        <!-- friends list -->
+
+        <button class="second-invite-friend" id="invite-friends-button">Invite friend</button>
+    </div>
+
+    <div id="earn-screen" class="screen hidden"></div>
+
+    <div id="profile-screen" class="screen hidden">
+        <div class="block">
+            <div class="block-item one">
+                <div class="img-cont">
+                    <img src="profile.png" alt="">
+                </div>
+                <p>ID:000000123</p>
+            </div>
+            <div class="block-item two">
+                <div class="img-cont">
+                    @
+                </div>
+                <p>Mamont228@gmail.com</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="settings-screen" class="screen hidden">
+        <div class="block">
+            <label class="block-item one" id="music-switcher">
+                <span class="img-cont">
+                    Music
+                </span>
+                <span class="super-input">
+                    <span class="super-input-child"></span>
+                </span>
+            </label>
+            <label class="block-item two" id="sound-switcher">
+                <span class="img-cont">
+                    Sound
+                </span>
+                <span class="super-input">
+                    <span class="super-input-child"></span>
+                </span>
+            </label>
+        </div>
+    </div>
 
     <footer id="clicker__footer" class="footer hidden">
         <button id="mb1"><img src="mine1.png" alt="">Mine</button>
