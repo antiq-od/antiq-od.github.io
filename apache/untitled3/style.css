@@ -70,6 +70,9 @@ body {
     height: 100vh;
     width: 100vw;
 }
+* {
+    touch-action: manipulation;
+}
 
 button, a, a:visited, a:focus, a:active, a:hover {
     border: none;
@@ -191,6 +194,10 @@ nav button img {
     overflow: hidden;
 }
 
+#circle__button.chill {
+    pointer-events: none;
+}
+
 #circle__button:active {
     transform: scale(0.9);
 }
@@ -226,6 +233,10 @@ nav button img {
     100% {
         transform: scale(1);
     }
+}
+
+#mb4.autopilot-farming-on {
+    filter: grayscale(1);
 }
 
 @keyframes shake {

@@ -1,5 +1,7 @@
 const getIds = (...args) => args.map(arg => document.getElementById(arg))
 
+const formatNumber = (number) => number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
 const goToPage = (id) => {
 	document.querySelectorAll('.page').forEach(function(div) {
 		div.classList.add('hidden');
@@ -18,13 +20,14 @@ const goToScreen = (id) => {
 
 document.addEventListener("DOMContentLoaded", function() {
 
-	const [ musicSwitcher, soundSwitcher, headerDetails, profileScreen, paymentStart, visaMasterPay, cryptoPay, paymentType, logoButton, greetingsPage, clicker__footer, mb1, mb2, mb3, mb4, paymentPage, pay, appPage, mineFactoryScreen, structureScreen, clickerScreen, profileButton, settingsButton, taps__state, circle__button ] = getIds(
-		"music-switcher", "sound-switcher", 'header-details', "profile-screen", "payment-start", "visa-master-pay", "crypto-pay", "payment-type", "logo-button", "greetings-page", "clicker__footer", 'mb1', 'mb2', 'mb3', 'mb4', "payment-page", "pay", "app-page", "minefactory-screen", "structure-screen",  "clicker-screen", "profile-button", "settings-button", "taps__state", "circle__button"
+	const [ voltcoinAmount, timer, musicSwitcher, soundSwitcher, headerDetails, profileScreen, paymentStart, visaMasterPay, cryptoPay, paymentType, logoButton, greetingsPage, clicker__footer, mb1, mb2, mb3, mb4, paymentPage, pay, appPage, mineFactoryScreen, structureScreen, clickerScreen, profileButton, settingsButton, taps__state, circle__button ] = getIds(
+		'voltcoin-amount', 'timer', "music-switcher", "sound-switcher", 'header-details', "profile-screen", "payment-start", "visa-master-pay", "crypto-pay", "payment-type", "logo-button", "greetings-page", "clicker__footer", 'mb1', 'mb2', 'mb3', 'mb4', "payment-page", "pay", "app-page", "minefactory-screen", "structure-screen",  "clicker-screen", "profile-button", "settings-button", "taps__state", "circle__button"
 	);
 
 	const state = {
 		amount: 0,
 		clicks: 0,
+		timer: false,
 		profile: {
 			name: '',
 			email: '',
@@ -108,9 +111,83 @@ document.addEventListener("DOMContentLoaded", function() {
 		soundSwitcher.classList.toggle('active');
 	}
 
+
+	//healing opportunity to play
+	const PAUSE_DURATION = 3 * 60 * 60 * 1000; // 3 часа
+	const reviveBros = () => { taps__state.innerHTML = "1000"; timer.innerHTML = "03:00" }
+
+	const startTimerViber = (endTime) => {
+		if (!state.timer) {
+			state.timer = true
+			const startTimer = setInterval(() => {
+				const LEFT_TIME = endTime - Date.now();
+
+				const FINISSSHHHHHEEEESH = () => { reviveBros();
+					circle__button.classList.remove('chill');
+					mb4.classList.remove('autopilot-farming-on')
+					clearInterval(startTimer);
+					state.timer = false; }
+
+				const PL_UP = () => { const hours =
+					Math.floor((LEFT_TIME % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+					const minutes = Math.floor((LEFT_TIME % (1000 * 60 * 60)) / (1000 * 60));
+					timer.innerHTML = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`; }
+
+				if (LEFT_TIME <= 0) FINISSSHHHHHEEEESH()
+				else PL_UP()
+
+			}, 1000);
+		} else console.log('Time Is Already On')
+	}
+
+	// earniesss
+	const initTapsPause = () => { circle__button.classList.add('chill'); startTimerViber(Date.now() + PAUSE_DURATION) };
+	const initVibingFckMoneyGrind = () => { mb4.classList.add('autopilot-farming-on'); startTimerViber(Date.now() + PAUSE_DURATION) }
+
 	// clicker
 	circle__button.onclick = () => {
-		taps__state.innerHTML = Number(taps__state.innerHTML) + 1
+		const newValue = Number(taps__state.innerHTML) - 1;
+		if (newValue) {
+			taps__state.innerHTML = `${Number(taps__state.innerHTML) - 1}`;
+
+//				 											     $$$$$$$__$$$$$$$$__$$$$$$$__$$$$$$$
+//				 	  										   $$$_____$$$_______$$$$_____$$$______$$$
+//				 	  										  $$_______$$$$_____$$_$$_____$$$________$$
+//				 	  										 $$_______$$__$$___$$___$$___$$_$$________$$
+//				 	  										 $________$____$___$_____$___$___$_________$
+//				 	  										 $$_______$$__$$___$$___$$___$$_$$________$$
+//				 	  										  $$_______$$$$_____$$_$$_____$$$________$$
+//				   											   $$______$$$$_____$$$$_____$$$$$_____$$$
+//				   											     $$$$$$$__$$$$$$$__$$$$$$$___$$$$$$$
+
+
+
+//___________________________________________________________________________¶¶¶_______________________________________________________________________________________________________________________
+//____________________________________________________________________________¶¶¶__________________________________________________________________________________________________________________________________________________
+//___________________________________________________________¶¶¶_______________¶¶¶¶________________________________________________________________________________________________________________________________________________
+//___________________________________________________________¶¶¶¶_______________¶__¶_______________________________________________________________________________________________________________________________________________
+//___________________________________________________________¶_¢_¶¶_____________¶¶__¶¶_____________________________________________________________________________________________________________________________________________
+//___________________________________________________________¶_$$_¶_____________¶¶___¶____________________________________________________________________________________________________________________________________________
+//___________________________________________________________¶_$$$_¶______________¶___¶¶___________________________________________________________________________________________________________________________________________
+//___________________________________________________________¶_$$$$_¶_____________¶¶____¶__________________________________________________________________________________________________________________________________________
+//__________________________________________________________¶¶_$$$$_†®¥†¨©∂˚˜åß¬†®¥†¨©∂˚˜åß¬†®¥†¨∂˚˜åß¬¶¶\_________________________________________________________________________________________________________________________
+//___________________________________________________________¶¶¶$$$$¶¶$$$$¶$$$$0$$$$0¶$$$$¶0$$$$0¶¶¶00¶∑∑∑\________________________________________________________________________________________________________________________
+//__________________________________________________________¶¶____0____0____0____0__¶¶____¶__0____0____0_¶¶¶_______________________________________________________________________________________________________________________
+//_________________________________________________________†®¥†¨©∂˚˜åß¬†®¥†¨©∂˚˜åß¬¶_____†®¥†¨©∂˚˜åß¬¶¶¶¶¶¶________________________________________________________________________________________________________________________
+//________________________________________________________________________________¶_____¶__________________________________________________________________________________________________________________________________________
+//_______________________________________________________________________________¶____¶¶___________________________________________________________________________________________________________________________________________
+//______________________________________________________________________________¶_____¶____________________________________________________________________________________________________________________________________________
+//______________________________________________________________________________¶___¶¶_____________________________________________________________________________________________________________________________________________
+//_____________________________________________________________________________¶___¶_______________________________________________________________________________________________________________________________________________
+//____________________________________________________________________________¶¶_¶¶________________________________________________________________________________________________________________________________________________
+//___________________________________________________________________________¶¶_¶__________________________________________________________________________________________________________________________________________________
+//__________________________________________________________________________¶¶_¶¶__________________________________________________________________________________________________________________________________________________
+//_________________________________________________________________________¶¶¶¶__________________________ø…®
+
+
+			voltcoinAmount.innerHTML = `${formatNumber(Number(voltcoinAmount.innerHTML.replace(' ', '')) + 1)}`
+		}
+		else { taps__state.innerHTML = "0"; initTapsPause() }
 	}
 
 	const goFromFooterToScrenn = (id) => {
@@ -120,14 +197,8 @@ document.addEventListener("DOMContentLoaded", function() {
 	// footer menu
 	mb1.onclick = () => goFromFooterToScrenn('minefactory-screen');
 	mb2.onclick = () => goFromFooterToScrenn('structure-screen');
-	mb3.onclick = () => {
-		goFromFooterToScrenn('friends-screen');
-		headerDetails.classList.add('hidden');
-	}
-
-	mb4.onclick = () => {
-		// goFromFooterToScrenn('earn-screen');
-	}
+	mb3.onclick = () => { goFromFooterToScrenn('friends-screen'); headerDetails.classList.add('hidden') }
+	mb4.onclick = () => initVibingFckMoneyGrind()
 
 
 
