@@ -610,3 +610,70 @@ body .mini__logo {
 .block-item.active .super-input-child {
     transform: translateX(8vw);
 }
+
+#friends-screen {
+    text-align: center;
+    height: 100%;
+}
+
+#friends-screen h2 {
+    font-size: 4vh;
+}
+
+.invite-friend-big-button .right-column p {
+    font-size: 1.5vh;
+    white-space: revert-layer;
+}
+.invite-friend-big-button .right-column h4 {
+    margin-bottom: 1vh;
+}
+.invite-friend-big-button h4,
+.invite-friend-big-button p {
+    margin: 0;
+}
+
+.invite-friend-big-button .mini__logo {
+    width: initial;
+    height: 2vh;
+}
+.invite-friend-big-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    height: 15vh;
+    background: gray;
+    padding: 3vw;
+    border-radius: 3vh;
+    border: 1px solid;
+    background: var(--second-lvl-bg);
+    gap: 5%;
+    margin-bottom: 7vh;
+}
+
+.gift__flex {
+    height: 100%;
+}
+
+.friends-button {
+    width: 100%;
+    padding: 3vh 3vw;
+    border: 1px solid var(--voltcoin-cg);
+    border-radius: 3vh;
+    background-color: var(--second-lvl-bg);
+    color: var(--voltcoin-cg);
+    margin-bottom: 5vh;
+    font-size: 1.8vh;
+}
+
+.second-invite-friend {
+    font-weight: bold;
+    width: 100%;
+    padding: 3vh 3vw;
+    border: 1px solid var(--voltcoin-cg);
+    border-radius: 3vh;
+    background-color: var(--voltcoin-cg);
+    color: var(--gold);
+    margin-bottom: 5vh;
+    font-size: 4.7vh;
+}

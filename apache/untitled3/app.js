@@ -72,13 +72,13 @@ document.addEventListener("DOMContentLoaded", function() {
 	cryptoPay.onclick = () => paymentProc();
 
 	// header
-	const showFullHeader = () => {
+	const showFullHeader = (promt) => {
 		headerDetails.classList.remove('hidden');
 		profileButton.classList.remove('hidden')
 		settingsButton.classList.remove('hidden');
-		logoButton.classList.remove('hidden');
+		if (promt === 'with-out-logo') logoButton.classList.add('hidden');
+		else logoButton.classList.remove('hidden');
 	}
-
 	profileButton.onclick = () => {
 		headerDetails.classList.add('hidden');
 		profileButton.classList.add('hidden');
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		goToScreen('profile-screen')
 	}
 	logoButton.onclick = () => {
-		showFullHeader();
+		showFullHeader('with-out-logo');
 		goToScreen('clicker-screen');
 	}
 	settingsButton.onclick = () => {
@@ -120,9 +120,14 @@ document.addEventListener("DOMContentLoaded", function() {
 	// footer menu
 	mb1.onclick = () => goFromFooterToScrenn('minefactory-screen');
 	mb2.onclick = () => goFromFooterToScrenn('structure-screen');
-	mb3.onclick = () => goFromFooterToScrenn('friends-screen');
-	mb4.onclick = () => goFromFooterToScrenn('earn-screen');
+	mb3.onclick = () => {
+		goFromFooterToScrenn('friends-screen');
+		headerDetails.classList.add('hidden');
+	}
 
+	mb4.onclick = () => {
+		// goFromFooterToScrenn('earn-screen');
+	}
 
 
 
