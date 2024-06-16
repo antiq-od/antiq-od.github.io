@@ -56,6 +56,14 @@
     gap: 5%;
 }
 
+#CONTAINEER {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
 #payment-page button:hover {
     background-color: var(--voltcoin-cg);
     color: var(--second-lvl-bg);
@@ -192,6 +200,7 @@ nav button img {
     border-radius: 1000px;
     cursor: pointer;
     overflow: hidden;
+    transition: .05s;
 }
 
 #circle__button.chill {
@@ -199,58 +208,37 @@ nav button img {
 }
 
 #circle__button:active {
-    transform: scale(0.9);
+    transform: scale(0.95);
 }
 
-#circle__button::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 150%;
-    height: 150%;
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 50%;
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.5);
-    transition: opacity 0.3s, transform 0.3s;
-    pointer-events: none;
-}
-
-#circle__button:active::before {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-    transition: opacity 0.1s, transform 0.1s;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
+/*@keyframes pulse {*/
+/*    0% {*/
+/*        transform: scale(1);*/
+/*    }*/
+/*    50% {*/
+/*        transform: scale(1.1);*/
+/*    }*/
+/*    100% {*/
+/*        transform: scale(1);*/
+/*    }*/
+/*}*/
 
 #mb4.autopilot-farming-on {
     filter: grayscale(1);
 }
 
-@keyframes shake {
-    0%, 100% {
-        transform: translateX(0);
-    }
-    20%, 60% {
-        transform: translateX(-10px);
-    }
-    40%, 80% {
-        transform: translateX(10px);
-    }
-}
-
+/*@keyframes shake {*/
+/*    0%, 100% {*/
+/*        transform: translateX(0);*/
+/*    }*/
+/*    20%, 60% {*/
+/*        transform: translateX(-10px);*/
+/*    }*/
+/*    40%, 80% {*/
+/*        transform: translateX(10px);*/
+/*    }*/
+/*}*/
+/**/
 #circle__button:hover {
     animation: pulse 1s infinite;
 }
@@ -386,32 +374,55 @@ nav button img {
     padding: 1.37vh 2vw;
 }
 
-.mine-desc {
+.energyBlock {
     display: flex;
-    gap: 5%;
-    margin-bottom: 4%;
-}
-
-.mine-desc > div {
-    width: 47.5%;
-    aspect-ratio: 1.5 / 1;
-    background-color: var(--second-lvl-bg);
-}
-.mine-desc > div img {
-    /*height: 25px;*/
-}
-
-.left-t, .right-t {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border: 1px solid var(--voltcoin-cg);
     border-radius: 15px;
+    background-color: var(--second-lvl-bg);
+    width: 47.5%;
+    margin-bottom: 5%;
 }
 
+/*.left-t, .right-t {*/
+/*    border: 1px solid var(--voltcoin-cg);*/
+/*    border-radius: 15px;*/
+/*}*/
+
+.solar_lvl {
+    font-size: 2vh;
+}
 .flex__double {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 3%;
     height: 12vh;
+    width: 90%;
+}
+
+.flex__double .left-t img {
+    width: 90%;
+}
+.flex__double .left-t {
+    position: relative;
+}
+.flex__double ::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    height: 100%;
+    background-color: #00d084;
+    width: 1px;
+}
+
+.flex__double .left-t,
+.flex__double .right-t {
+    width: 50%;
 }
 
 .left-r {
@@ -451,12 +462,13 @@ body .mini__logo {
 
 .button-text {
     margin: auto;
-    font-size: 2.5vh;
-    height: 6.8vh;
+    font-size: 2.3vh;
+    height: 4.8vh;
     display: flex;
     border-top: 1px solid var(--voltcoin-cg);
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 
 .button-text {

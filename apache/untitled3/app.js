@@ -20,14 +20,38 @@ const goToScreen = (id) => {
 
 document.addEventListener("DOMContentLoaded", function() {
 
-	const [ voltcoinAmount, timer, musicSwitcher, soundSwitcher, headerDetails, profileScreen, paymentStart, visaMasterPay, cryptoPay, paymentType, logoButton, greetingsPage, clicker__footer, mb1, mb2, mb3, mb4, paymentPage, pay, appPage, mineFactoryScreen, structureScreen, clickerScreen, profileButton, settingsButton, taps__state, circle__button ] = getIds(
-		'voltcoin-amount', 'timer', "music-switcher", "sound-switcher", 'header-details', "profile-screen", "payment-start", "visa-master-pay", "crypto-pay", "payment-type", "logo-button", "greetings-page", "clicker__footer", 'mb1', 'mb2', 'mb3', 'mb4', "payment-page", "pay", "app-page", "minefactory-screen", "structure-screen",  "clicker-screen", "profile-button", "settings-button", "taps__state", "circle__button"
+	const [ CONTAINEER, voltcoinAmount, timer, musicSwitcher, soundSwitcher, headerDetails, profileScreen, paymentStart, visaMasterPay, cryptoPay, paymentType, logoButton, greetingsPage, clicker__footer, mb1, mb2, mb3, mb4, paymentPage, pay, appPage, mineFactoryScreen, structureScreen, clickerScreen, profileButton, settingsButton, taps__state, circle__button ] = getIds(
+		'CONTAINEER', 'voltcoin-amount', 'timer', "music-switcher", "sound-switcher", 'header-details', "profile-screen", "payment-start", "visa-master-pay", "crypto-pay", "payment-type", "logo-button", "greetings-page", "clicker__footer", 'mb1', 'mb2', 'mb3', 'mb4', "payment-page", "pay", "app-page", "minefactory-screen", "structure-screen",  "clicker-screen", "profile-button", "settings-button", "taps__state", "circle__button"
 	);
 
 	const state = {
-		amount: 0,
-		clicks: 0,
+		balance: 435210,
+		clicks: 1000,
+		clicksPerClick: 1,
 		timer: false,
+		structure: {
+
+		},
+		mineFactory: {
+			mineFactories: [
+				{title: "D.C.", logo: "electricity.png", lvl: 1, amount: 800},
+				{title: "A.C.", logo: "electricity2.jpg", lvl: 1, amount: 2000},
+				{title: "Рower lin", logo: "flexVibe8.jpg", lvl: 1, amount: 800},
+				{title: "High voltag", logo: "flexVibe7.jpg", lvl: 1, amount: 2000},
+				{title: "Transforme", logo: "flexVibe6.jpg", lvl: 1, amount: 800},
+				{title: "HVD", logo: "transformator.png", lvl: 1, amount: 2000},
+				{title: "Converter station", logo: "flexVibe5.jpg", lvl: 1, amount: 800},
+				{title: "Cable system", logo: "flexVibe4.jpg", lvl: 1, amount: 2000},
+				{title: "Superconductor", logo: "flexVibe3.jpg", lvl: 1, amount: 800},
+				{title: "Renewable energ", logo: "flexVibe2.jpg", lvl: 1, amount: 2000},
+				{title: "Renewable energ", logo: "flexVibe1.jpg", lvl: 1, amount: 2000},
+			],
+			upgradeMineFactory: function upgradeMineFactory (id) {
+				this.mineFactories[id].lvl += 1;
+				this.mineFactories[id].energy += 100;
+				this.mineFactories[id].price = 1000;
+			},
+		},
 		profile: {
 			name: '',
 			email: '',
@@ -44,6 +68,78 @@ document.addEventListener("DOMContentLoaded", function() {
 		},
 	}
 
+	const getState = () => {
+		//actual timer
+		// actual structure and energy (mine, x2) lvl upgrade
+		//  actual profile data
+		//   actual settings data
+		//    actual music and sound settings
+		return JSON.parse(localStorage.getItem('state'));
+	}
+
+	const renderClickerBlocks = () => voltcoinAmount.innerHTML = `${formatNumber(state.balance)}`
+
+
+	// STRUCTURE + BLOCKS ____________________________________________________________________________________________________________________________________________________________________________________
+
+	const renderStructureBlocks = () => {
+		console.log('state.mineFactory.mineFactories.reduce((acc, num) => acc + num.lvl, 0)', state.mineFactory.mineFactories.reduce((acc, num) => acc + num.lvl, 0))
+		console.log('state.mineFactory.length', state.mineFactory.length)
+		state.clicksPerClick = state.mineFactory.mineFactories.reduce((acc, num) => acc + num.lvl, 0) - 10;
+		// Clear existing content
+		CONTAINEER.innerHTML = '';
+
+		state.mineFactory.mineFactories.forEach((block, index) => {
+			const energyBlockElement = createEnergyBlock(block, index);
+			CONTAINEER.appendChild(energyBlockElement);
+		});
+
+		circle__button.classList.add('chill' + state.clicksPerClick);
+	}
+
+	const onClick = (index) => {
+		const price = state.mineFactory.mineFactories[index].amount
+		if (state.balance >= price) {
+			state.mineFactory.upgradeMineFactory(index);
+			renderStructureBlocks();
+
+			state.balance -= price;
+			renderClickerBlocks();
+		} else {
+			alert('Not enough money');
+		}
+	}
+
+	const createEnergyBlock = ({ title, logo, lvl, amount }, index) => {
+		const div = document.createElement('div');
+		div.className = 'energyBlock';
+
+		div.innerHTML = `
+        <div class="flex__double">
+            <div class="left-t">
+                <img src="${logo}" class="factory__logo" alt="${title}">
+            </div>
+            <div class="right-t">
+                <h5><span class="solar_lvl">+${lvl}</span></h5>
+                <p>
+                    <img src="zero.png" alt="Solar Panels" class="mini__logo">
+                    <span class="solarP__amount">${amount}</span>
+                </p>
+            </div>
+        </div>
+        <h4 class="button-text">${title}</h4>
+    `;
+
+		// Add click event listener
+		div.addEventListener('click', () => onClick(index));
+
+		return div;
+	};
+
+	//________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+	// greetings and Payment ________________________________________________________________________________________________________________________________________________________________________
 	greetingsPage.onclick = () => goToPage('payment-page');
 
 	pay.onclick = () => {
@@ -73,6 +169,9 @@ document.addEventListener("DOMContentLoaded", function() {
 	}
 	visaMasterPay.onclick = () => paymentProc();
 	cryptoPay.onclick = () => paymentProc();
+
+
+	//________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 	// header
 	const showFullHeader = (promt) => {
@@ -111,7 +210,6 @@ document.addEventListener("DOMContentLoaded", function() {
 		soundSwitcher.classList.toggle('active');
 	}
 
-
 	//healing opportunity to play
 	const PAUSE_DURATION = 3 * 60 * 60 * 1000; // 3 часа
 	const reviveBros = () => { taps__state.innerHTML = "1000"; timer.innerHTML = "03:00" }
@@ -146,9 +244,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	// clicker
 	circle__button.onclick = () => {
-		const newValue = Number(taps__state.innerHTML) - 1;
-		if (newValue) {
-			taps__state.innerHTML = `${Number(taps__state.innerHTML) - 1}`;
+		console.log(state.clicks, state.clicksPerClick);
+		state.clicks -= state.clicksPerClick;
+		console.log('new state.clicks', state.clicks)
+		if (state.clicks) {
+			taps__state.innerHTML = `${state.clicks}`
+			console.log('taps__state.innerHTML', state.clicks);
 
 //				 											     $$$$$$$__$$$$$$$$__$$$$$$$__$$$$$$$
 //				 	  										   $$$_____$$$_______$$$$_____$$$______$$$
@@ -184,8 +285,8 @@ document.addEventListener("DOMContentLoaded", function() {
 //__________________________________________________________________________¶¶_¶¶__________________________________________________________________________________________________________________________________________________
 //_________________________________________________________________________¶¶¶¶__________________________ø…®
 
-
-			voltcoinAmount.innerHTML = `${formatNumber(Number(voltcoinAmount.innerHTML.replace(' ', '')) + 1)}`
+			state.balance += state.clicksPerClick;
+			renderClickerBlocks();
 		}
 		else { taps__state.innerHTML = "0"; initTapsPause() }
 	}
@@ -194,9 +295,13 @@ document.addEventListener("DOMContentLoaded", function() {
 		showFullHeader();
 		goToScreen(id);
 	}
+
+	renderStructureBlocks();
+	renderClickerBlocks();
+
 	// footer menu
 	mb1.onclick = () => goFromFooterToScrenn('minefactory-screen');
-	mb2.onclick = () => goFromFooterToScrenn('structure-screen');
+	mb2.onclick = () => { renderStructureBlocks(); goFromFooterToScrenn('structure-screen') };
 	mb3.onclick = () => { goFromFooterToScrenn('friends-screen'); headerDetails.classList.add('hidden') }
 	mb4.onclick = () => initVibingFckMoneyGrind()
 
